@@ -1,0 +1,11 @@
+*{
+  box-sizing: border-box;
+  font-family: 'Helvetica', 'Arial', sans-serif;
+  color: white;
+  font-size: 9pt;
+  background-color: $blue;
+}
+
+.site-wrapper, html, .full-height{
+  height: 100%;
+}
