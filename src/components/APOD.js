@@ -1,6 +1,6 @@
 import axios from 'axios'
 import React, { useState, useEffect } from 'react'
-import { Link } from 'react-router-dom'
+// import { Link } from 'react-router-dom'
 
 
 const APOD = () => {
@@ -18,7 +18,7 @@ const APOD = () => {
   useEffect(() => {
     const getApod = async () => {
       try {
-        const { data } = await axios(`https://api.nasa.gov/planetary/apod?api_key${api}`)
+        const { data } = await axios(`https://api.nasa.gov/planetary/apod?${api}`)
         setApod(data)
       } catch (err) {
         setHasError(true)
@@ -31,10 +31,9 @@ const APOD = () => {
   return (
     <>
       { apod ?
-      <div className="apod col-12 col-md-6 col-lg-4 grow">
-        <div className="card-header">
-          <h5 className="mt-2">{apod.title}<br />{apod.copyright}<br />{apod.date}</h5>
-        </div>
+      <div className="d-flex flex-column justify-content-center">
+        <h5 className="mt-2 border">{apod.title}<br />{apod.copyright}<br />{apod.date}</h5>
+        <img className="image border" src={apod.hdurl} alt="pic of the day"/>
       </div>
       :
       <>

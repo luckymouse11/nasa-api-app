@@ -1,4 +1,6 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
+
 
 const Navbar = () => {
 
@@ -8,13 +10,13 @@ const Navbar = () => {
       <div className="container-fluid">
         <div className="nav navbar-nav mb-1 mb-lg-0 d-flex align-middle">
           <li className="nav-item m-2">
-            <h2 to="/" className="nav-link">home</h2>
+            <Link to="/" className="nav-link">home</Link>
           </li>
-          <li className="nav-item m-2 dropdown">
-            <button className="dropbtn">brands</button>
+          <li className="nav-item m-3 dropdown">
+            <button className="dropbtn">accessing data</button>
             <div className="dropdown-content">
               {/* change h2 to Link */}
-              <div to="/APOD/" className="nav-link">A Picture of the Day</div>
+              <Link to="/APOD/" className="nav-link">A Picture of the Day</Link>
               <div to="/APOD/" className="nav-link">Mars Rover Images</div>
               <div to="/APOD/" className="nav-link">DONKI</div>
               <hr />
